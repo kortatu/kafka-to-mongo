@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: kafkatomongo
+---
+testFramework: junit
+sourceLanguage: java
