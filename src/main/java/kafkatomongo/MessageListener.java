@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
-import java.text.MessageFormat;
 
 @KafkaListener(offsetReset = LATEST)
 public class MessageListener {
@@ -22,9 +21,9 @@ public class MessageListener {
         this.statsController = statsController;
     }
 
-//    @Topic("aTopic")
+    @Topic("aTopic")
     public void receive(KafkaMessage message) {
-        log.info(MessageFormat.format("Message received through Kafka {0} ({1})", message.ip, message.name));
+        log.info("Message received through Kafka {} ({})", message.ip, message.name);
         this.statsController.lastStats().addInMessage(message.ip + "(" + ")" + message.name);
     }
 }

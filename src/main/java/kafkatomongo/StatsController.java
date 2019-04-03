@@ -10,10 +10,12 @@ import io.reactivex.Single;
 @Controller("/stats")
 public class StatsController {
     private final MessageProducer messageProducer;
+    private final KafkaMessageDao kafkaMessageDao;
     private Stats lastStats = new Stats(0, 0, null);
 
-    public StatsController(MessageProducer messageProducer) {
+    public StatsController(MessageProducer messageProducer, KafkaMessageDao kafkaMessageDao) {
         this.messageProducer = messageProducer;
+        this.kafkaMessageDao = kafkaMessageDao;
     }
 
     @Get(produces = MediaType.APPLICATION_JSON)
@@ -21,9 +23,6 @@ public class StatsController {
         return this.lastStats;
     }
 
-    @Post(consumes = MediaType.APPLICATION_JSON)
-    public Single<KafkaMessage> addKafkaMessage(@Body Single<KafkaMessage> message) {
-            return message.flatMap(messageProducer::sendMessage);
-    }
+
 
 }
