@@ -8,5 +8,5 @@ import io.reactivex.Single;
 public interface MessageProducer {
 
     @Topic("aTopic")
-    public Single<KafkaMessage> sendMessage(KafkaMessage message);
+    Single<KafkaMessage> sendMessage(KafkaMessage message);
 }

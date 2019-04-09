@@ -5,11 +5,7 @@ import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;
-import io.reactivex.Flowable;
-import io.reactivex.Maybe;
 import io.reactivex.Single;
-
-import java.util.List;
 
 @Controller("/messagesB")
 public class MessageBlockingController {

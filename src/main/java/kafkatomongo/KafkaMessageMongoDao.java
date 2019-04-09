@@ -6,6 +6,8 @@ import com.mongodb.reactivestreams.client.MongoCollection;
 import io.reactivex.Flowable;
 import io.reactivex.Maybe;
 import io.reactivex.Single;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -14,6 +16,8 @@ import javax.inject.Singleton;
 public class KafkaMessageMongoDao implements KafkaMessageDao {
 
     private final MongoClient mongoClient;
+    @SuppressWarnings("unused")
+    private Logger log = LoggerFactory.getLogger(KafkaMessageMongoDao.class);
 
     @Inject
     public KafkaMessageMongoDao(MongoClient mongoClient) {
