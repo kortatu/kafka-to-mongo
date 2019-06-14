@@ -5,7 +5,6 @@ import static io.micronaut.configuration.kafka.annotation.OffsetReset.LATEST;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import io.reactivex.Single;
-import io.reactivex.SingleObserver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
